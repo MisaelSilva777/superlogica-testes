@@ -1,0 +1,20 @@
+{
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "lint": "run-s -cl lint:app",
+    "lint-fix": "run-s -cl lint-fix:app",
+    "lint:app": "./vendor/bin/phpcs --colors --cache --standard=phpcs.xml ./src/",
+    "lint-fix:app": "./vendor/bin/phpcbf --colors --cache --standard=phpcs.xml ./src/"
+  },
+  "name": "superlogica-challenge",
+  "version": "1.0.0",
+  "description": "package config to challenge of superlogica",
+  "main": "index.js",
+  "author": "Misael Silva",
+  "license": "MIT",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

@@ -1,0 +1,6 @@
+# npm e composer
+/app/vendor
+/app/node_modules
+
+#env variables
+/app/.env

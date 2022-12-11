@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Misaeldev">
+	<description>App Coding Standard</description>
+
+	<exclude-pattern>vendor</exclude-pattern>
+	<exclude-pattern>node_modules</exclude-pattern>
+
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter" />
+
+	<rule ref="Generic.Commenting.Todo" />
+
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+
+	<rule ref="Squiz.Classes.ValidClassName"/>
+
+	<rule ref="PSR1.Methods.CamelCapsMethodName"/>
+	
+
+	<rule ref="PEAR.Commenting.FunctionComment"/>
+
+</ruleset>
