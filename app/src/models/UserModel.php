@@ -102,6 +102,42 @@ class UserModel {
     }
 
     /**
+     * Return if a user exists by your username
+     *
+     * @return bool
+     */
+    public function checkExistsUser() : bool {
+
+        $read = new ReadController();
+        $read->exeRead( $this->table, "WHERE username = :username", "username=" . $this->username );
+
+        if ( ! $read->getResult() ) {
+            return false;
+        }
+
+        return true;
+
+    }
+
+    /**
+     * Return if a user exists by your email
+     *
+     * @return bool
+     */
+    public function checkExistsEmail() : bool {
+
+        $read = new ReadController();
+        $read->exeRead( $this->table, "WHERE email = :email", "email=" . $this->email );
+
+        if ( ! $read->getResult() ) {
+            return false;
+        }
+
+        return true;
+
+    }
+
+    /**
      * Create a new User
      *
      * @return bool;
@@ -111,11 +147,11 @@ class UserModel {
         $create = new CreateController();
 
         $create->exeCreate( $this->table, [
-            'full_name' => $this->full_name,
-            'username'  => $this->username,
-            'zipcode'   => $this->zipcode,
-            'email'     => $this->email,
-            'password'  => $this->password
+            'name'     => $this->full_name,
+            'username' => $this->username,
+            'zipcode'  => $this->zipcode,
+            'email'    => $this->email,
+            'password' => $this->password
         ] );
 
         return ! empty( $create->getResult() ) ? true : false;

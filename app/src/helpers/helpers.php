@@ -9,7 +9,7 @@
  */
 function renderView( string $view_name ) : void {
 
-    $file_path =  __DIR__ . "/views/$view_name.php";
+    $file_path =  __DIR__ . "/../assets/views/$view_name.php";
 
     if ( ! file_exists( $file_path ) ) {
 
@@ -22,51 +22,21 @@ function renderView( string $view_name ) : void {
 }
 
 /**
- * Check if has a empty field in the array data
+ * Render specific script
  *
- * @param array $data - array with the field values
- * @return boolean
+ * @param string $script_name - name of script.
+ * @return void
  */
-function checkHasEmptyFields( array $data ) : bool {
+function renderScript( string $script_name ) : void {
 
-    if ( ! in_array( '', $data) ) {
+    $file_path =  __DIR__ . "/../assets/scripts/$script_name.js";
 
-        return false;
+    if ( ! file_exists( $file_path ) ) {
+
+        return;
 
     }
 
-    return true;
+    require_once $file_path;
 
 }
-
-/**
- * Check if the string is a email
- *
- * @param string $email - email string to test
- * @return boolean
- */
-function stringIsEmail( string $email ) : bool {
-
-    if( ! filter_var( $email, FILTER_VALIDATE_EMAIL) ) {
-
-        return false;
-
-    }
-
-    return true;
-
-}
-
-/**
- * Check if the  string has only letters and numbers
- *
- * @param string $string - string to test
- * @return boolean
- */
-function stringHasOnlyLettersAndNumbers( string $string ) : bool {
-
-    return preg_match("/^[a-zA-Z0-9]+$/", $string); 
-
-}
-
-

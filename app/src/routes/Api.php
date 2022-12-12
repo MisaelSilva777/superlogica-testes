@@ -41,7 +41,11 @@ class Api {
             $this->path = rtrim($this->path, "/" );
         }
 
-        $this->sendToRoute( $this->method, $this->path );
+        if ( ! empty( $this->path ) ) {
+            $this->setHeader();
+            $this->sendToRoute( $this->method, $this->path );
+        }
+       
 
     }
 
@@ -53,8 +57,6 @@ class Api {
      * @return void
      */
     private function sendToRoute( string $method, string $path ) {
-
-        header('Content-Type: application/json; charset=utf-8');
 
         $group = '/'. PATH_API . '/api';
 
@@ -114,6 +116,10 @@ class Api {
 
     }
 
+    protected function setHeader() { 
+        header('Content-Type: application/json; charset=utf-8');
+    }
+
     protected function getUserController(){
 
         $userModel      = new UserModel();
@@ -129,7 +135,7 @@ class Api {
      *
      * @return void
      */
-    public function notFound() : void {
+    protected function notFound() : void {
 
         http_response_code(404);
         echo json_encode([
