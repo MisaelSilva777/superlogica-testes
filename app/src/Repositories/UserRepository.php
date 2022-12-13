@@ -38,7 +38,7 @@ class UserRepository implements UserRepositoryInterface {
         $this->entity->setPassword($password);
 
         return $this->entity->create();
-        
+
     }
 
     /**

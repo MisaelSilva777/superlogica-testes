@@ -26,13 +26,13 @@ class UserController implements UserApiInterface {
 
         $users = $this->userService->getAllUsers();
         $this->httpResponde( 200, $users );
-        
+
     }
 
     /**
      * Undocumented function
      *
-	 * @param array      $data - data of new element
+	 * @param array $data - data of new element
      */
     public function create( array $data ) : void {
 
@@ -50,7 +50,7 @@ class UserController implements UserApiInterface {
      * Undocumented function
      *
      * @param string $status
-     * @param mixed $data
+     * @param mixed  $data
      * @return void
      */
     protected function httpResponde( string $status, array $data ) : void {

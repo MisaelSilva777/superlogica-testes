@@ -54,7 +54,7 @@ class UserValidator {
      */
     static function stringHasOnlyLettersAndNumbers( string $string ) : bool {
 
-        return preg_match("/^[a-zA-Z0-9]+$/", $string); 
+        return preg_match("/^[a-zA-Z0-9]+$/", $string);
 
     }
 
@@ -66,7 +66,7 @@ class UserValidator {
      */
     static function validatePassword( string $password ) : bool {
 
-        return preg_match("/^.*(?=.{8,})(?=.*\d)(?=.*[a-zA-Z]).*$/", $password ); 
+        return preg_match("/^.*(?=.{8,})(?=.*\d)(?=.*[a-zA-Z]).*$/", $password );
 
     }
 
@@ -78,7 +78,7 @@ class UserValidator {
      */
     static function checkIfUserExists( string $username, UserRepository $userRepository ) : bool {
 
-        return $userRepository->checkUserExists( $username ); 
+        return $userRepository->checkUserExists( $username );
 
     }
 
@@ -90,7 +90,7 @@ class UserValidator {
      */
     static function checkIfEmailExists( string $email, UserRepository $userRepository ) : bool {
 
-        return $userRepository->checkIfEmailExists( $email ); 
+        return $userRepository->checkIfEmailExists( $email );
 
     }
 

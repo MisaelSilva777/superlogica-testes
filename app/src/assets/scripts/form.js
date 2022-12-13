@@ -3,17 +3,15 @@ var request;
 $('form.register-user').on('submit', function(e) {
     e.preventDefault();
 
-
     if (request) {
         request.abort();
     }
-    
+
     var $form = $(this);
 
     var $inputs = $form.find("input");
 
     var serializedData = $form.serialize();
-
 
     $inputs.prop("disabled", true);
 
@@ -26,7 +24,6 @@ $('form.register-user').on('submit', function(e) {
     request.done(function (response, textStatus, jqXHR){
         console.log("Enviando dados...");
     });
-
 
     request.fail(function (jqXHR, textStatus, errorThrown){
         console.error(

@@ -45,7 +45,6 @@ class Api {
             $this->setHeader();
             $this->sendToRoute( $this->method, $this->path );
         }
-       
 
     }
 
@@ -106,7 +105,6 @@ class Api {
 
         if ( $group . '/form' === $path ) {
 
-           
             $user = $this->getUserController();
             return $user->create( $_POST );
 
@@ -116,7 +114,7 @@ class Api {
 
     }
 
-    protected function setHeader() { 
+    protected function setHeader() {
         header('Content-Type: application/json; charset=utf-8');
     }
 
