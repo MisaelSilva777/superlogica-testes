@@ -83,7 +83,7 @@ class Api {
      */
     private function getRoutes( string $group, string $path ) {
 
-        if ( $group . '/forms' === $path ) {
+        if ( $group . '/users' === $path ) {
 
             $user = $this->getUserController();
             return $user->index();
@@ -103,7 +103,7 @@ class Api {
      */
     private function postRoutes( string $group, string $path ) {
 
-        if ( $group . '/form' === $path ) {
+        if ( $group . '/user' === $path ) {
 
             $user = $this->getUserController();
             return $user->create( $_POST );

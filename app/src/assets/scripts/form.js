@@ -16,7 +16,7 @@ $('form.register-user').on('submit', function(e) {
     $inputs.prop("disabled", true);
 
     request = $.ajax({
-        url: "/index.php/api/form",
+        url: "/index.php/api/user",
         type: "post",
         data: serializedData
     });
@@ -60,7 +60,7 @@ $('form.register-user').on('submit', function(e) {
 
 $(document).ready(function(){
     request = $.ajax({
-        url: "/index.php/api/forms",
+        url: "/index.php/api/users",
         type: "get"
     });
 

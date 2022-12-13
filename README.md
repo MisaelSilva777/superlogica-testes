@@ -58,7 +58,7 @@ Como variáveis globais, tenho as que são usadas para conexão com banco de dad
 - DB_USER=root
 - DB_PASS=root
 
-é necessário importar o banco de dados superlogica-empty, pode ser feito tanto via terminal como pelo phpmyadmin
+é necessário importar o banco de dados superlogica-empty dentro de um banco chamado superlogica, pode ser feito tanto via terminal como pelo phpmyadmin
 
 ## Qualidade de escrita
 
