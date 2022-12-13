@@ -58,6 +58,8 @@ Como variáveis globais, tenho as que são usadas para conexão com banco de dad
 - DB_USER=root
 - DB_PASS=root
 
+é necessário importar o banco de dados superlogica-empty, pode ser feito tanto via terminal como pelo phpmyadmin
+
 ## Qualidade de escrita
 
 Para manter uma qualidade de escrita no código também implementei o PHP Code Sniffer com algumas rules definidas no arquivo xml, com comandos personalizados no package.json. Para que eu rodasse o PHPcs para validar o código a partir do comando ‘yarn lint’ e outro PHPCbf para corrigir a partir de ‘yarn lint-fix’.
