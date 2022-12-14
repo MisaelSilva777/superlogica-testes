@@ -8,6 +8,12 @@ class UserService {
 
     protected $userRepository;
 
+    /**
+     * The constructor method of User Service and
+     * added your repository to respective attribute
+     *
+     * @param UserRepositoryInterface $userRepository - Repository of User Entity.
+     */
     public function __construct( UserRepositoryInterface $userRepository) {
         $this->userRepository = $userRepository;
     }
@@ -17,7 +23,7 @@ class UserService {
      *
      * @return array
     */
-    public function getAllUsers() {
+    public function getAllUsers() : array {
         $users = $this->userRepository->getAllUsers();
 
         return [
@@ -26,11 +32,12 @@ class UserService {
     }
 
     /**
-     * Create new user
+     *  Create new user
      *
      * @param array $data - data of new user.
-    */
-    public function makeUser( array $data ) {
+     * @return array
+     */
+    public function makeUser( array $data ) : array {
 
         if ( UserValidator::checkHasEmptyFields( $data ) ) {
 
@@ -110,7 +117,12 @@ class UserService {
 
 
 
-
+    /**
+     * Function to return specific error message.
+     *
+     * @param string $error_type - error type to ref and return your message.
+     * @return array
+     */
     public function messages( string $error_type ) : array {
 
         $message = "";

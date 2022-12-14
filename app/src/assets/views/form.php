@@ -1,3 +1,9 @@
+<?php
+/**
+ * View of the user form.
+ */
+?>
+
 <h1 class="text-center mt-5">Formulário SuperLógica</h1>
 <div class="container d-flex justify-content-center mt-5">
 

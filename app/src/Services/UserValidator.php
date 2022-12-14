@@ -73,7 +73,8 @@ class UserValidator {
     /**
      * Check if the username already exists
      *
-     * @param string $username - username to validate
+     * @param string         $username       - username to validate
+     * @param UserRepository $userRepository - repository class of user entity to run method
      * @return boolean
      */
     static function checkIfUserExists( string $username, UserRepository $userRepository ) : bool {
@@ -83,9 +84,10 @@ class UserValidator {
     }
 
     /**
-     * Check if the username already exists
+     * Check if the user email already exists
      *
-     * @param string $username - username to validate
+     * @param string         $email          - email to validate
+     * @param UserRepository $userRepository - repository class of user entity to run method
      * @return boolean
      */
     static function checkIfEmailExists( string $email, UserRepository $userRepository ) : bool {

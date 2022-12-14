@@ -114,10 +114,20 @@ class Api {
 
     }
 
+    /**
+     * Set header attributes of api response
+     *
+     * @return void
+     */
     protected function setHeader() {
         header('Content-Type: application/json; charset=utf-8');
     }
 
+    /**
+     * Bind the UserController
+     *
+     * @return void
+     */
     protected function getUserController(){
 
         $userModel      = new UserModel();

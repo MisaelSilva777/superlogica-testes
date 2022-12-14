@@ -63,11 +63,11 @@ class UserModel {
     /**
      * Constructor method to instance model of user
      *
-     * @param string $full_name
-     * @param string $username
-     * @param string $zipcode
-     * @param string $email
-     * @param string $password
+     * @param string $full_name - name of user
+     * @param string $username  - username of user
+     * @param string $zipcode   - zipcode of user address
+     * @param string $email     - email of user
+     * @param string $password  - password of user
      */
     public function __construct (
         string $full_name = null,

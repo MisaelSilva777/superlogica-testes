@@ -9,6 +9,12 @@ class UserRepository implements UserRepositoryInterface {
 
     protected $entity;
 
+    /**
+     * Constructor of user Repository
+     * Add value to entity attribute of user model
+     *
+     * @param UserModel $user - model of entity
+     */
     public function __construct( UserModel $user ) {
         $this->entity = $user;
     }
@@ -24,7 +30,7 @@ class UserRepository implements UserRepositoryInterface {
     /**
      * Create new user
      *
-     * @param array $data
+     * @param array $data - data of new user.
      * @return bool
      */
     public function createUser( array $data) : bool {
@@ -44,7 +50,7 @@ class UserRepository implements UserRepositoryInterface {
     /**
      * Check user exist
      *
-     * @param string $username
+     * @param string $username - username of user.
      * @return bool
      */
     public function checkUserExists( string $username ) : bool {
@@ -58,7 +64,7 @@ class UserRepository implements UserRepositoryInterface {
     /**
      * Check user email exist
      *
-     * @param string $email
+     * @param string $email - email of user.
      * @return bool
      */
     public function checkIfEmailExists( string $email ) : bool {

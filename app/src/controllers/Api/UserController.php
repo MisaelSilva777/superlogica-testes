@@ -10,17 +10,20 @@ class UserController implements UserApiInterface {
     protected $userService;
 
     /**
-     * Undocumented function
+     * Constructor of UserController
+     * Addd User service to attribute userService
      *
+     * @param UserService $userService - User Service Class
      */
-    public function __construct( UserService $categoryService ) {
-        $this->userService = $categoryService;
+    public function __construct( UserService $userService ) {
+        $this->userService = $userService;
     }
 
 
     /**
-     * Undocumented function
+     * Method to return all users.
      *
+     * @return void
      */
     public function index() : void {
 
@@ -30,9 +33,10 @@ class UserController implements UserApiInterface {
     }
 
     /**
-     * Undocumented function
+     * Method to create a new user.
      *
 	 * @param array $data - data of new element
+     * @return void
      */
     public function create( array $data ) : void {
 
@@ -47,10 +51,10 @@ class UserController implements UserApiInterface {
     }
 
     /**
-     * Undocumented function
+     * Method to return http response of route.
      *
-     * @param string $status
-     * @param mixed  $data
+     * @param string $status - status of http response.
+     * @param mixed  $data   - content of response.
      * @return void
      */
     protected function httpResponde( string $status, array $data ) : void {
